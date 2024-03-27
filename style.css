@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* 轻灰色背景 */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* 白色背景 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    border-radius: 8px; /* 圆角边框 */
+  }
+  
+  h1, p {
+    text-align: center;
+    color: #333; /* 深灰色文本 */
+  }
+  
+  .audio-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .audio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd; /* 细边框 */
+    border-radius: 4px; /* 圆角边框 */
+    padding: 10px;
+    background-color: #f9f9f9; /* 轻灰色背景 */
+    transition: transform 0.2s; /* 平滑变换效果 */
+  }
+  
+  .audio-item:hover {
+    transform: scale(1.05); /* 鼠标悬停放大效果 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停时阴影 */
+  }
+  
+  audio {
+    width: 100%; /* 完全宽度 */
+    margin-top: 10px; /* 顶部边距 */
+  }
+  
