@@ -3,51 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>音频Demo展示</title>
+<title>ExpressiveSinger Demo</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-  <h1>音频Demo展示</h1>
-  <p>这里展示了各种音频Demo，你可以听听看。</p>
-  <div class="audio-grid">
-    <!-- 第一行音频示例 -->
-    <div class="audio-item">
-      <audio controls>
-        <source src="path/to/your-audio1.mp3" type="audio/mpeg">
-        你的浏览器不支持 audio 元素。
-      </audio>
-      <p>音频Demo 1</p>
+  <h1 style="color: #2E5090; font-family: 'Arial', sans-serif;">ExpressiveSinger: Synthesizing Expressive Singing Voice as An Instrument</h1>
+  <br>Abstract: </br><p class="Abstract" style="text-indent: 2em; text-align: justify; font-family: 'Georgia', serif; font-size: 16px; color: #333;">In this study, we introduce ExpressiveSinger, the first end to end expressive singing voices synthesis model, which accurately reflect users’ musical expression by analyzing real-played MIDI sequences and lyrics. Unlike real-played MIDI sequences that contain velocity labels, MIDI sequences from SVS datasets do not have velocity information. We propose a novel method to automatically annotate the missing velocities in MIDI sequences, providing extra levers for singing generation. Moreover, we separately model expressive features and modify the vocoder to enhance controllability and quality of the synthetic singing voices. Finally, we adopt a soft-vc like approach for end-to-end training to effectively preserve more content features. Our experiments on the professional Mandarin singing corpus validate our data annotation method and demonstrate the effectiveness of ExpressiveSinger in terms of naturalness and a strong correlation between the synthetic singing voice and the MIDI input.</p>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="clips\overall4-1.png" alt="ExpressiveSinger Diagram 1" style="width: 48%; margin-right: 4%;">
+    <img src="clips\HarmonicDecoder4-1.png" alt="ExpressiveSinger Diagram 2" style="width: 48%;">
+  </div>
+  <div class="highlight-box">
+    
+    <p >Demo of the correlation between the
+      musical expression of velocity-labeled MIDI sequences and
+      the singing expression of the ground truth singing voices.</p>
+
+      <div class="audio-grid">
+        <div class="audio-item">
+            <p align="center">Original Singing Voice</p>
+          <audio controls>
+            <source src="clips/OG/2086003181.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/OG/2086003189.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/OG/2093003460.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/OG/2100003745.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/OG/2100003715.wav" type="audio/mpeg">
+          </audio>
+        </div>
+        
+        <div class="audio-item">
+            <p align="center">MIDI with Default Velocity</p>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3181_bip_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3189_bip_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3460_bip_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3745_bip_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3715_bip_1.wav"  type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="audio-item">
+            <p align="center">MIDI with Predicted Velocity</p>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3181_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3189_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3460_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3745_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/MIDI_2/MOS3715_bip.wav" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+  </div>
+  
+ 
+
+  <div class="highlight-box">
+    <p>
+      Singing Demo of the ExpressiveSinger with 
+      four configurations(16, 32, 48, 64 channels of the harmonic energy)
+    </p>
+    <div class="audio-grid2">
+      <div class="audio-item">
+          <p align="center">Original Singing Voice</p>
+        <audio controls>
+          <source src="clips/OG/2044001628.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/OG/2044001632.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/OG/2044001659.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/OG/2092003435.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/OG/2100003715.wav" type="audio/mpeg">
+        </audio>
+      </div>
+      
+      <div class="audio-item">
+          <p align="center">VISinger2(Modified)</p>
+        <audio controls>
+          <source src="clips/mosvi_2/2044001628_vi2.wav"  type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mosvi_2/2044001632_vi2.wav"  type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mosvi_2/2044001659_vi2.wav"  type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mosvi_2/2092003435_vi2.wav"  type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mosvi_2/2100003715_vi2.wav"  type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="audio-item">
+          <p align="center">ExpressiveSinger16</p>
+        <audio controls>
+          <source src="clips/mos16_2/2044001628.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mos16_2/2044001632.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mos16_2/2044001659.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mos16_2/2092003435.wav" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="clips/mos16_2/2100003715.wav" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="audio-item">
+          <p align="center">ExpressiveSinger32</p>
+          <audio controls>
+            <source src="clips/mos32_2/2044001628_final.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_2/2044001632_final.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_2/2044001659_final.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_2/2092003435_final.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_2/2100003715_final.wav" type="audio/mpeg">
+          </audio>
+      </div>
+      <div class="audio-item">
+          <p align="center">ExpressiveSinger48</p>
+          <audio controls>
+            <source src="clips/mos48_2/2044001628.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos48_2/2044001632.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos48_2/2044001659.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos48_2/2092003435.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos48_2/2100003715.wav" type="audio/mpeg">
+          </audio>
+      </div>
+      <div class="audio-item">
+          <p align="center">ExpressiveSinger64</p>
+          <audio controls>
+            <source src="clips/mos64_2/2044001628.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos64_2/2044001632.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos64_2/2044001659.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos64_2/2092003435.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos64_2/2100003715.wav" type="audio/mpeg">
+          </audio>
+      </div>
     </div>
-    <div class="audio-item">
-      <audio controls>
-        <source src="path/to/your-audio2.mp3" type="audio/mpeg">
-        你的浏览器不支持 audio 元素。
-      </audio>
-      <p>音频Demo 2</p>
-    </div>
-    <div class="audio-item">
-      <audio controls>
-        <source src="path/to/your-audio3.mp3" type="audio/mpeg">
-        你的浏览器不支持 audio 元素。
-      </audio>
-      <p>音频Demo 3</p>
-    </div>
-    <div class="audio-item">
-      <audio controls>
-        <source src="path/to/your-audio4.mp3" type="audio/mpeg">
-        你的浏览器不支持 audio 元素。
-      </audio>
-      <p>音频Demo 4</p>
-    </div>
-    <div class="audio-item">
-      <audio controls>
-        <source src="path/to/your-audio5.mp3" type="audio/mpeg">
-        你的浏览器不支持 audio 元素。
-      </audio>
-      <p>音频Demo 5</p>
-    </div>
-    <!-- 添加更多行的音频项 -->
+  </div>
+
+  
+
+  <div class="highlight-box">
+    <p>Demo of the ExpressiveSinger’s capabilities in reflecting
+       the musical expressions of real-played MIDI inputs, 
+       each input utterance was paired with MIDI sequences performed by musicians.
+
+      <div class="audio-grid2">
+        <div class="audio-item">
+            <p align="center">MIDI played by musicians</p>
+          <audio controls>
+            <source src="clips/variational/MOS1648_1_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/variational/MOS1648_2_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/variational/MOS1649_0_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/variational/MOS1649_1_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/variational/MOS3181_0_bip.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/variational/MOS3181_1_bip.wav" type="audio/mpeg">
+          </audio>
+        </div>
+        
+        <div class="audio-item">
+            <p align="center">VISinger2(Modified)</p>
+          <audio controls>
+            <source src="clips/mosvi_va/2044001648_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mosvi_va/2044001648_2.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mosvi_va/2044001649_0.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mosvi_va/2044001649_1.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mosvi_va/2086003181_0.wav"  type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mosvi_va/2086003181_1.wav"  type="audio/mpeg">
+          </audio>
+        </div>
+        
+        <div class="audio-item">
+            <p align="center">ExpressiveSinger32</p>
+          <audio controls>
+            <source src="clips/mos32_va/2044001648_1.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_va/2044001648_2.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_va/2044001649_0.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_va/2044001649_1.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_va/2086003181_0.wav" type="audio/mpeg">
+          </audio>
+          <audio controls>
+            <source src="clips/mos32_va/2086003181_1.wav" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
   </div>
 </div>
 </body>

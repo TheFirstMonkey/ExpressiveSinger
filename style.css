@@ -1,49 +1,97 @@
+/* 修改后的CSS样式 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; /* 轻灰色背景 */
     margin: 0;
     padding: 0;
-  }
+}
   
-  .container {
+.container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff; /* 白色背景 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
     border-radius: 8px; /* 圆角边框 */
-  }
+    text-align: left; /* 容器内所有内容默认左对齐 */
+}
   
-  h1, p {
+h1 {
     text-align: center;
     color: #333; /* 深灰色文本 */
-  }
-  
-  .audio-grid {
+}
+
+p.abstract {
+    text-align: left; /* 摘要部分文本左对齐 */
+    color: #333; /* 深灰色文本 */
+}
+
+.audio-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr); /* 控制每行音频项的数量 */
+    gap: 5px; /* 音频项之间的间隙 */
     padding: 20px;
-  }
+}
   
-  .audio-item {
+.audio-item2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ddd; /* 细边框 */
-    border-radius: 4px; /* 圆角边框 */
-    padding: 10px;
-    background-color: #f9f9f9; /* 轻灰色背景 */
-    transition: transform 0.2s; /* 平滑变换效果 */
-  }
+    padding: 2px; /* 内边距 */
+    /* 移除了边框、圆角和背景色 */
+}
   
-  .audio-item:hover {
-    transform: scale(1.05); /* 鼠标悬停放大效果 */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停时阴影 */
-  }
-  
-  audio {
+/* .audio-item:hover 样式已经被移除，因此不再需要 */
+
+audio {
     width: 100%; /* 完全宽度 */
     margin-top: 10px; /* 顶部边距 */
+}
+.highlight-box {
+    border: 2px solid #007BFF; /* 蓝色边框 */
+    padding: 20px; /* 内边距 */
+    margin: 20px 0; /* 上下外边距 */
+    border-radius: 10px; /* 边框圆角 */
+    background-color: #f0f8ff; /* 浅蓝色背景 */
+  }
+  
+  .highlight-box h2 {
+    color: #007BFF; /* 标题颜色 */
+    margin-bottom: 15px; /* 标题下的外边距 */
+  }
+  
+  .highlight-box p {
+    color: #333; /* 段落文字颜色 */
+    line-height: 1.6; /* 行高 */
+  }
+
+  
+  .audio-grid2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 创建六列，每列大小相等 */
+    gap: 10px; /* 设置音频项目之间的间距 */
+  }
+  
+  .audio-item {
+    /* 不需要设置最大宽度，因为grid布局会自动处理 */
+  }
+  
+  /* 保留之前的.highlight-box和其他相关样式 */
+  .highlight-box {
+    border: 2px solid #007BFF; /* 蓝色边框 */
+    padding: 20px; /* 内边距 */
+    margin: 20px 0; /* 上下外边距 */
+    border-radius: 10px; /* 边框圆角 */
+    background-color: #f0f8ff; /* 浅蓝色背景 */
+  }
+  
+  .highlight-box h2 {
+    color: #007BFF; /* 标题颜色 */
+    margin-bottom: 15px; /* 标题下的外边距 */
+  }
+  
+  .highlight-box p {
+    color: #333; /* 段落文字颜色 */
+    line-height: 1.6; /* 行高 */
   }
   
